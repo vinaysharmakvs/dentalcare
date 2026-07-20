@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dental Care Centre in Raja ka Talab offers dental implants, root canal treatment, braces, aligners, teeth whitening, smile makeover, pediatric dentistry and emergency dental care."
+    />
+    <title>Dental Care Centre | Premium Dental Clinic in Raja ka Talab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Dental Care Centre home">
+        <span class="brand-mark">D</span>
+        <span>
+          <strong>Dental Care</strong>
+          <small>Centre</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#treatments">Treatments</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-call" href="tel:+919418253659">Emergency: +91 94182 53659</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu">Menu</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Premium dental care for every smile</p>
+          <h1>Confident smiles begin with expert, gentle dentistry.</h1>
+          <p>
+            Advanced dental treatments, clear guidance, painless care and a
+            clinic experience designed around comfort, safety and trust.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#photo-guidance">Check Dental Discomfort</a>
+            <a class="button ghost" href="#appointment">Book Appointment</a>
+            <a class="button ghost" href="tel:+919418253659">Call Emergency</a>
+          </div>
+          <div class="rating-strip" aria-label="Google rating">
+            <strong>4.9</strong>
+            <span>*****</span>
+            <small>Google Rating from real patient reviews</small>
+            <a href="https://maps.app.goo.gl/U8zuNtmUY39orPFB6" target="_blank" rel="noopener noreferrer">Read reviews</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/doctor-hero.png" alt="Confident dentist in a modern dental clinic" />
+          <div class="hero-card">
+            <strong>Same-day care</strong>
+            <span>Emergency dental appointments available</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section photo-guidance lead-checker" id="photo-guidance">
+        <div class="photo-guidance-copy">
+          <p class="eyebrow">Dental Discomfort Checker</p>
+          <h2>Are you in discomfort? Start here.</h2>
+          <p>
+            Answer a few quick questions and upload a clear tooth photo. The
+            tool will show basic guidance, then you can send the summary to
+            Dental Care Centre on WhatsApp for clinic-team review.
+          </p>
+          <div class="disclaimer-box">
+            <strong>Photo review disclaimer</strong>
+            <p>
+              This tool does not read or diagnose your photo automatically.
+              Your selected symptoms create basic guidance, and the uploaded
+              photo should be attached on WhatsApp for clinic-team review. Final
+              advice is given only after consultation with Dr. Sumit Sharma.
+            </p>
+          </div>
+        </div>
+        <form class="photo-form" id="photoForm">
+          <label>
+            Patient name
+            <input type="text" name="photoName" placeholder="Your name" required />
+          </label>
+          <label>
+            Mobile number
+            <input type="tel" name="photoPhone" placeholder="+91" required />
+          </label>
+          <label>
+            What issue are you facing?
+            <select name="photoIssue" required>
+              <option value="">Select concern</option>
+              <option>Tooth pain</option>
+              <option>Swelling</option>
+              <option>Broken tooth</option>
+              <option>Bleeding gums</option>
+              <option>Alignment concern</option>
+              <option>Smile / cosmetic concern</option>
+              <option>Child dental concern</option>
+            </select>
+          </label>
+          <label>
+            Pain level
+            <select name="painLevel" required>
+              <option value="">Select pain level</option>
+              <option>No pain</option>
+              <option>Mild pain</option>
+              <option>Moderate pain</option>
+              <option>Severe pain</option>
+            </select>
+          </label>
+          <label>
+            Since when?
+            <select name="issueDuration" required>
+              <option value="">Select duration</option>
+              <option>Today</option>
+              <option>2-3 days</option>
+              <option>More than a week</option>
+              <option>More than a month</option>
+            </select>
+          </label>
+          <fieldset class="symptom-checks">
+            <legend>Select visible symptoms</legend>
+            <label><input type="checkbox" name="symptoms" value="Swelling" /> Swelling</label>
+            <label><input type="checkbox" name="symptoms" value="Cavity / black spot" /> Cavity / black spot</label>
+            <label><input type="checkbox" name="symptoms" value="Broken tooth" /> Broken tooth</label>
+            <label><input type="checkbox" name="symptoms" value="Bleeding gums" /> Bleeding gums</label>
+            <label><input type="checkbox" name="symptoms" value="Sensitivity" /> Sensitivity</label>
+            <label><input type="checkbox" name="symptoms" value="Bad breath" /> Bad breath</label>
+          </fieldset>
+          <label class="upload-box">
+            Upload tooth photo
+            <input type="file" id="toothPhoto" accept="image/*" required />
+            <span>Choose a clear photo in good light</span>
+          </label>
+          <div class="photo-preview" id="photoPreview">
+            <span>No photo selected</span>
+          </div>
+          <div class="guidance-result" id="guidanceResult" aria-live="polite">
+            <span>Complete the form to see basic guidance here.</span>
+          </div>
+          <div class="photo-actions">
+            <button class="button ghost" type="button" id="identifyIssue">Identify Basic Issue</button>
+            <button class="button primary" type="submit">Send Summary on WhatsApp</button>
+          </div>
+          <small>
+            WhatsApp will open with your summary. Please attach the selected
+            photo in the WhatsApp chat before sending.
+          </small>
+        </form>
+      </section>
+
+      <section class="quick-panel" aria-label="Clinic highlights">
+        <article>
+          <span>01</span>
+          <strong>Painless approach</strong>
+          <p>Modern techniques and calm explanation before every treatment.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Digital diagnosis</strong>
+          <p>Clear scans, transparent plans and predictable treatment journeys.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Family dentistry</strong>
+          <p>Care for children, adults and senior patients under one roof.</p>
+        </article>
+      </section>
+
+      <section class="section" id="treatments">
+        <div class="section-heading">
+          <p class="eyebrow">Treatments</p>
+          <h2>Complete dental care, from pain relief to smile design.</h2>
+        </div>
+        <div class="treatment-grid">
+          <article class="treatment-card">
+            <span>IM</span>
+            <h3>Dental Implants</h3>
+            <p>Permanent tooth replacement with natural feel and confident bite.</p>
+          </article>
+          <article class="treatment-card">
+            <span>RC</span>
+            <h3>Root Canal</h3>
+            <p>Relieve tooth pain while preserving your natural tooth structure.</p>
+          </article>
+          <article class="treatment-card">
+            <span>AL</span>
+            <h3>Braces & Aligners</h3>
+            <p>Straighter teeth with traditional braces or clear aligner planning.</p>
+          </article>
+          <article class="treatment-card">
+            <span>WH</span>
+            <h3>Teeth Whitening</h3>
+            <p>Professional brightening for a fresh, healthy-looking smile.</p>
+          </article>
+          <article class="treatment-card">
+            <span>SM</span>
+            <h3>Smile Makeover</h3>
+            <p>Cosmetic planning for shape, shade, symmetry and smile confidence.</p>
+          </article>
+          <article class="treatment-card">
+            <span>PD</span>
+            <h3>Pediatric Dentistry</h3>
+            <p>Gentle child-friendly dental care with trust-building appointments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Before & After Gallery</p>
+          <h2>Smile transformations presented with care.</h2>
+        </div>
+        <div class="gallery-grid">
+          <article class="smile-card smile-card-image">
+            <img src="assets/Whitening_result.png" alt="Before and after teeth whitening result" />
+            <strong>Whitening result</strong>
+          </article>
+          <article class="smile-card smile-card-image">
+            <img src="assets/Aligner_correction.png" alt="Before and after aligner correction result" />
+            <strong>Aligner correction</strong>
+          </article>
+          <article class="smile-card smile-card-image">
+            <img src="assets/Smile_makeover.png" alt="Before and after smile makeover result" />
+            <strong>Smile makeover</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section doctors" id="doctors">
+        <div class="doctor-copy">
+          <p class="eyebrow">Meet the Doctor</p>
+          <h2>Expert dental care by Dr. Sumit Sharma.</h2>
+          <p>
+            Dr. Sumit Sharma focuses on comfort, accurate diagnosis and clear
+            treatment plans that are easy for patients to understand.
+          </p>
+        </div>
+        <div class="doctor-cards">
+          <article>
+            <span>Dr</span>
+            <h3>Dr. Sumit Sharma</h3>
+            <p>Professional dental care, ortho treatment, root canal therapy, smile correction and modern dentistry.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section tour-section">
+        <div class="tour-card">
+          <p class="eyebrow">Virtual Clinic Tour</p>
+          <h2>See the clinic before your first visit.</h2>
+          <p>Embed a clinic walkthrough video here to help patients feel comfortable before arrival.</p>
+          <button class="play-button" type="button" aria-label="Play clinic tour">Play</button>
+        </div>
+      </section>
+
+      <section class="section reviews" id="reviews">
+        <div class="section-heading">
+          <p class="eyebrow">Patient Reviews</p>
+          <h2>Trusted by families, professionals and smile makeover patients.</h2>
+          <p>
+            Real Google reviews from patients who visited the dental clinic at Raja ka Talab.
+          </p>
+        </div>
+        <div class="review-shell">
+          <button class="slider-button" type="button" id="prevReview" aria-label="Previous review">&lt;</button>
+          <article class="review-card" id="reviewCard">
+            <span>*****</span>
+            <p>"Nice dental clinic in Raja ka Talab. Dentist is professional and well spoken. Clinic have all the modern equipments to treat patients."</p>
+            <strong>Ankush Pathania</strong>
+          </article>
+          <button class="slider-button" type="button" id="nextReview" aria-label="Next review">&gt;</button>
+        </div>
+        <a class="review-link" href="https://maps.app.goo.gl/U8zuNtmUY39orPFB6" target="_blank" rel="noopener noreferrer">Read all Google reviews</a>
+      </section>
+
+      <section class="section appointment" id="appointment">
+        <div class="appointment-copy">
+          <p class="eyebrow">Online Appointment Booking</p>
+          <h2>Book your visit in less than a minute.</h2>
+          <p>Share your details and our clinic team will confirm the appointment slot.</p>
+        </div>
+        <form class="booking-form" id="bookingForm">
+          <label>
+            Full name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Mobile number
+            <input type="tel" name="phone" placeholder="+91" required />
+          </label>
+          <label>
+            Treatment needed
+            <select name="treatment" required>
+              <option value="">Select treatment</option>
+              <option>Dental Implants</option>
+              <option>Root Canal</option>
+              <option>Braces & Aligners</option>
+              <option>Teeth Whitening</option>
+              <option>Smile Makeover</option>
+              <option>Pediatric Dentistry</option>
+              <option>Emergency Dental Care</option>
+            </select>
+          </label>
+          <label>
+            Preferred date
+            <input type="date" name="date" required />
+          </label>
+          <button class="button primary" type="submit">Book Appointment</button>
+        </form>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-copy">
+          <p class="eyebrow">Clinic Location</p>
+          <h2>Visit Dental Care Centre</h2>
+          <p><strong>Phone:</strong> +91 94182 53659</p>
+          <p><strong>Hours:</strong> Mon-Sat, 9:00 AM - 8:00 PM</p>
+          <p><strong>Address:</strong> Dental Care Centre, Raja ka Talab, Tehsil Nurpur, District Kangra, Himachal Pradesh - 176051</p>
+          <p><a class="inline-map-link" href="https://maps.app.goo.gl/U8zuNtmUY39orPFB6" target="_blank" rel="noopener noreferrer">Open on Google Maps</a></p>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Dental clinic location"
+            src="https://www.google.com/maps?q=Dental%20Care%20Centre%20Raja%20ka%20Talab%20Tehsil%20Nurpur%20District%20Kangra%20Himachal%20Pradesh%20176051&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow">FAQs</p>
+          <h2>Questions patients ask before booking.</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Is root canal treatment painful?</summary>
+            <p>Modern root canal treatment is performed with local anesthesia and comfort-focused techniques, so most patients feel only mild pressure.</p>
+          </details>
+          <details>
+            <summary>How long does teeth whitening take?</summary>
+            <p>Most whitening appointments take 45 to 60 minutes, depending on the shade and sensitivity plan.</p>
+          </details>
+          <details>
+            <summary>Do you treat children?</summary>
+            <p>Yes. Pediatric dentistry appointments are designed to be calm, friendly and confidence-building for children.</p>
+          </details>
+          <details>
+            <summary>Can I book an emergency appointment?</summary>
+            <p>Yes. Call the emergency number or use WhatsApp for urgent tooth pain, swelling, broken teeth or dental injury.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/919418253659?text=Hello%20Dental%20Care%20Centre%2C%20I%20want%20to%20book%20a%20dental%20appointment"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      WhatsApp
+    </a>
+
+    <footer class="site-footer">
+      <strong>Dental Care Centre</strong>
+      <span>Premium dental care for confident, healthy smiles.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
