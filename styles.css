@@ -338,10 +338,15 @@ h2 {
   box-shadow: 0 34px 90px rgba(16, 43, 60, 0.18);
 }
 
+.hero-visual picture,
 .hero-visual img {
+  display: block;
   width: 100%;
   height: 100%;
   min-height: 500px;
+}
+
+.hero-visual img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.45s ease;
@@ -396,7 +401,8 @@ h2 {
   border-top: var(--soft-border);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(247, 251, 251, 0.9));
-  padding-top: 34px;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
 .quick-panel::before,
@@ -431,7 +437,11 @@ h2 {
 .quick-panel article {
   position: relative;
   overflow: hidden;
-  padding: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: center;
+  padding: 16px;
 }
 
 .quick-panel article::after {
@@ -461,6 +471,13 @@ h2 {
 }
 
 .quick-panel span {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: var(--aqua);
   color: var(--teal);
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -469,7 +486,7 @@ h2 {
 .quick-panel strong,
 .treatment-card h3 {
   display: block;
-  margin: 8px 0;
+  margin: 0 0 4px;
   font-size: 1.15rem;
 }
 
@@ -479,6 +496,12 @@ h2 {
 .faq-list p {
   color: var(--muted);
   line-height: 1.65;
+}
+
+.quick-panel p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .section-heading {
@@ -508,23 +531,23 @@ h2 {
 
 .treatment-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
 }
 
 .treatment-card {
   position: relative;
   overflow: hidden;
-  min-height: 220px;
-  padding: 26px;
+  min-height: 0;
+  padding: 18px;
 }
 
 .treatment-card::after {
   position: absolute;
   right: -40px;
   bottom: -40px;
-  width: 140px;
-  height: 140px;
+  width: 96px;
+  height: 96px;
   border-radius: 999px;
   content: "";
   background: rgba(23, 167, 161, 0.09);
@@ -542,7 +565,7 @@ h2 {
 }
 
 .treatment-card:hover {
-  transform: translateY(-9px);
+  transform: translateY(-6px);
   border-color: rgba(23, 167, 161, 0.26);
   box-shadow: 0 32px 78px rgba(16, 43, 60, 0.15);
 }
@@ -561,9 +584,9 @@ h2 {
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
   background: var(--aqua);
   color: var(--deep-teal);
   font-weight: 900;
@@ -579,6 +602,18 @@ h2 {
 .treatment-card p {
   position: relative;
   z-index: 1;
+}
+
+.treatment-card h3 {
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.treatment-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
 .gallery-section {
@@ -1372,9 +1407,12 @@ h2 {
   }
 
   .quick-panel,
-  .treatment-grid,
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .treatment-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .section-heading {
@@ -1405,8 +1443,13 @@ h2 {
   }
 
   .hero-visual,
+  .hero-visual picture,
   .hero-visual img {
     min-height: 360px;
+  }
+
+  .hero-visual img {
+    object-position: center top;
   }
 
   .hero-card {
@@ -1415,8 +1458,6 @@ h2 {
     max-width: none;
   }
 
-  .quick-panel,
-  .treatment-grid,
   .gallery-grid,
   .doctor-cards,
   .booking-form,
@@ -1424,6 +1465,33 @@ h2 {
   .symptom-checks,
   .photo-actions {
     grid-template-columns: 1fr;
+  }
+
+  .quick-panel {
+    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 18px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .quick-panel article {
+    scroll-snap-align: start;
+  }
+
+  .treatment-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .treatment-card {
+    padding: 14px;
+  }
+
+  .treatment-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .treatment-card p {
+    display: none;
   }
 
   .review-shell {
