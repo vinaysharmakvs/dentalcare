@@ -46,8 +46,8 @@
             clinic experience designed around comfort, safety and trust.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#photo-guidance">Check Dental Discomfort</a>
-            <a class="button ghost" href="#appointment">Book Appointment</a>
+            <a class="button primary" href="#appointment">Book Appointment</a>
+            <a class="button ghost" href="#photo-guidance">Dental Discomfort Checker</a>
             <a class="button ghost" href="tel:+919418253659">Call Emergency</a>
           </div>
           <div class="rating-strip" aria-label="Google rating">
@@ -58,104 +58,15 @@
           </div>
         </div>
         <div class="hero-visual">
-          <img src="assets/doctor-hero.png" alt="Confident dentist in a modern dental clinic" />
+          <picture>
+            <source media="(max-width: 640px)" srcset="assets/doctor-hero_mobile.png" />
+            <img src="assets/doctor-hero.png" alt="Confident dentist in a modern dental clinic" />
+          </picture>
           <div class="hero-card">
             <strong>Same-day care</strong>
             <span>Emergency dental appointments available</span>
           </div>
         </div>
-      </section>
-
-      <section class="section photo-guidance lead-checker" id="photo-guidance">
-        <div class="photo-guidance-copy">
-          <p class="eyebrow">Dental Discomfort Checker</p>
-          <h2>Are you in discomfort? Start here.</h2>
-          <p>
-            Answer a few quick questions and upload a clear tooth photo. The
-            tool will show basic guidance, then you can send the summary to
-            Dental Care Centre on WhatsApp for clinic-team review.
-          </p>
-          <div class="disclaimer-box">
-            <strong>Photo review disclaimer</strong>
-            <p>
-              This tool does not read or diagnose your photo automatically.
-              Your selected symptoms create basic guidance, and the uploaded
-              photo should be attached on WhatsApp for clinic-team review. Final
-              advice is given only after consultation with Dr. Sumit Sharma.
-            </p>
-          </div>
-        </div>
-        <form class="photo-form" id="photoForm">
-          <label>
-            Patient name
-            <input type="text" name="photoName" placeholder="Your name" required />
-          </label>
-          <label>
-            Mobile number
-            <input type="tel" name="photoPhone" placeholder="+91" required />
-          </label>
-          <label>
-            What issue are you facing?
-            <select name="photoIssue" required>
-              <option value="">Select concern</option>
-              <option>Tooth pain</option>
-              <option>Swelling</option>
-              <option>Broken tooth</option>
-              <option>Bleeding gums</option>
-              <option>Alignment concern</option>
-              <option>Smile / cosmetic concern</option>
-              <option>Child dental concern</option>
-            </select>
-          </label>
-          <label>
-            Pain level
-            <select name="painLevel" required>
-              <option value="">Select pain level</option>
-              <option>No pain</option>
-              <option>Mild pain</option>
-              <option>Moderate pain</option>
-              <option>Severe pain</option>
-            </select>
-          </label>
-          <label>
-            Since when?
-            <select name="issueDuration" required>
-              <option value="">Select duration</option>
-              <option>Today</option>
-              <option>2-3 days</option>
-              <option>More than a week</option>
-              <option>More than a month</option>
-            </select>
-          </label>
-          <fieldset class="symptom-checks">
-            <legend>Select visible symptoms</legend>
-            <label><input type="checkbox" name="symptoms" value="Swelling" /> Swelling</label>
-            <label><input type="checkbox" name="symptoms" value="Cavity / black spot" /> Cavity / black spot</label>
-            <label><input type="checkbox" name="symptoms" value="Broken tooth" /> Broken tooth</label>
-            <label><input type="checkbox" name="symptoms" value="Bleeding gums" /> Bleeding gums</label>
-            <label><input type="checkbox" name="symptoms" value="Sensitivity" /> Sensitivity</label>
-            <label><input type="checkbox" name="symptoms" value="Bad breath" /> Bad breath</label>
-          </fieldset>
-          <label class="upload-box">
-            Upload tooth photo
-            <input type="file" id="toothPhoto" accept="image/*" required />
-            <span>Choose a clear photo in good light</span>
-          </label>
-          <div class="photo-preview" id="photoPreview">
-            <span>No photo selected</span>
-          </div>
-          <div class="guidance-result" id="guidanceResult" aria-live="polite">
-            <span>Complete the form to see basic guidance here.</span>
-          </div>
-          <div class="photo-actions">
-            <button class="button ghost" type="button" id="identifyIssue">Identify Basic Issue</button>
-            <button class="button primary" type="submit">Send Summary on WhatsApp</button>
-          </div>
-          <small>
-            WhatsApp will open with your summary. Please attach the selected
-            photo in the WhatsApp chat before sending.
-          </small>
-        </form>
       </section>
 
       <section class="quick-panel" aria-label="Clinic highlights">
@@ -316,6 +227,98 @@
             <input type="date" name="date" required />
           </label>
           <button class="button primary" type="submit">Book Appointment</button>
+        </form>
+      </section>
+
+      <section class="section photo-guidance" id="photo-guidance">
+        <div class="photo-guidance-copy">
+          <p class="eyebrow">Dental Discomfort Checker</p>
+          <h2>Are you in discomfort? Use the basic checker.</h2>
+          <p>
+            Answer a few quick questions and upload a clear tooth photo. The
+            tool will show basic guidance, then you can send the summary to
+            Dental Care Centre on WhatsApp for clinic-team review.
+          </p>
+          <div class="disclaimer-box">
+            <strong>Photo review disclaimer</strong>
+            <p>
+              This tool does not read or diagnose your photo automatically.
+              Your selected symptoms create basic guidance, and the uploaded
+              photo should be attached on WhatsApp for clinic-team review. Final
+              advice is given only after consultation with Dr. Sumit Sharma.
+            </p>
+          </div>
+        </div>
+        <form class="photo-form" id="photoForm">
+          <label>
+            Patient name
+            <input type="text" name="photoName" placeholder="Your name" required />
+          </label>
+          <label>
+            Mobile number
+            <input type="tel" name="photoPhone" placeholder="+91" required />
+          </label>
+          <label>
+            What issue are you facing?
+            <select name="photoIssue" required>
+              <option value="">Select concern</option>
+              <option>Tooth pain</option>
+              <option>Swelling</option>
+              <option>Broken tooth</option>
+              <option>Bleeding gums</option>
+              <option>Alignment concern</option>
+              <option>Smile / cosmetic concern</option>
+              <option>Child dental concern</option>
+            </select>
+          </label>
+          <label>
+            Pain level
+            <select name="painLevel" required>
+              <option value="">Select pain level</option>
+              <option>No pain</option>
+              <option>Mild pain</option>
+              <option>Moderate pain</option>
+              <option>Severe pain</option>
+            </select>
+          </label>
+          <label>
+            Since when?
+            <select name="issueDuration" required>
+              <option value="">Select duration</option>
+              <option>Today</option>
+              <option>2-3 days</option>
+              <option>More than a week</option>
+              <option>More than a month</option>
+            </select>
+          </label>
+          <fieldset class="symptom-checks">
+            <legend>Select visible symptoms</legend>
+            <label><input type="checkbox" name="symptoms" value="Swelling" /> Swelling</label>
+            <label><input type="checkbox" name="symptoms" value="Cavity / black spot" /> Cavity / black spot</label>
+            <label><input type="checkbox" name="symptoms" value="Broken tooth" /> Broken tooth</label>
+            <label><input type="checkbox" name="symptoms" value="Bleeding gums" /> Bleeding gums</label>
+            <label><input type="checkbox" name="symptoms" value="Sensitivity" /> Sensitivity</label>
+            <label><input type="checkbox" name="symptoms" value="Bad breath" /> Bad breath</label>
+          </fieldset>
+          <label class="upload-box">
+            Upload tooth photo
+            <input type="file" id="toothPhoto" accept="image/*" required />
+            <span>Choose a clear photo in good light</span>
+          </label>
+          <div class="photo-preview" id="photoPreview">
+            <span>No photo selected</span>
+          </div>
+          <div class="guidance-result" id="guidanceResult" aria-live="polite">
+            <span>Complete the form to see basic guidance here.</span>
+          </div>
+          <div class="photo-actions">
+            <button class="button ghost" type="button" id="identifyIssue">Identify Basic Issue</button>
+            <button class="button primary" type="submit">Send Summary on WhatsApp</button>
+          </div>
+          <small>
+            WhatsApp will open with your summary. Please attach the selected
+            photo in the WhatsApp chat before sending.
+          </small>
         </form>
       </section>
 
